@@ -57,9 +57,10 @@ Again, the description should be specific enough that you can determine whether 
 
 ## 3.   Scope and Features Of The Project:
 
-The Scope places a boundary around the solution by detailing the range of features and functions of the project. This section helps to clarify the solution scope and can explicitly state what will not be delivered as well.
+The project will have a Java interface to FDB. The project will implement the Clusion encrypted search algorithm with Java and FDB.The project will have a Go interface to FDB. The project will implement the Dory encrypted search algorithm with Go and FDB. 
 
-It should be specific enough that you can determine that e.g. feature A is in-scope, while feature B is out-of-scope.
+The project scope includes testing the two encryption search algorithms on our local machines. We will also test the algorithms on MOC. We will have an analysis comparing the two algorithms in terms of their space, speed, and security. We will compare them using varying dataset sizes, number of parallel FDB queries, storage schemes, cluster sizes, and query complexities. 
+
 
 ** **
 
