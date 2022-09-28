@@ -4,7 +4,7 @@
 ## Team:
 - Dasha Smolina (dsmolina@bu.edu)
 - Jin San Yoon
-- Stephen Sweet
+- Stephen Sweet (ssweet@bu.edu)
 - Tian Tan (tiant@bu.edu)
 - Thomas Shen (zhaojun@bu.edu)
 
