@@ -6,7 +6,7 @@
 - Jin San Yoon
 - Stephen Sweet
 - Tian Tan (tiant@bu.edu)
-- Thomas Shen
+- Thomas Shen (zhaojun@bu.edu)
 
 ## Mentor:
 - Dan Lambright (dlambrig@gmail.com)
@@ -29,9 +29,23 @@ Project Proposal can be used during the follow-up analysis and design meetings t
 
 ## 1. Vision and Goals Of The Project:
 
-The vision section describes the final desired state of the project once the project is complete. It also specifies the key goals of the project. This section provides a context for decision-making. A shared vision among all team members can help ensuring that the solution meets the intended goals. A solid vision clarifies perspective and facilitates decision-making.
+FoundationDB (FDB) is a distributed key-store with strong ACID guarantees (Atomicity, Consistency, Isolation, Distributed). It is widely used to store users' documents in the cloud. The users want to store and query their documents encrypted since they do not trust the server. Avoid leakage in documents and query result is the purpose of the project.
 
-The vision statement should be specific enough that you can look at a proposed solution and say either "yes, this meets the vision and goals", or "no, it does not".
+The core vision of this project is to develop a search algorithm that can search documents on the cloud (in FDB) without leakage.
+
+The project is divided into the following steps:
+* Write Java/Go interface to FDB, which can:
+    * Load files (the dataset to search) into FDB - done once.
+    * Load index into FDB - done once.
+    * Update index with new files - done frequently
+* Learn and apply the researcher's search algorithm to our project, which can
+    * Query for token (in encrypted), return files - done frequently
+
+The idea system can:
+* make a query request to FDB by random bits (encrypted token)
+* get a response from FDB by random bits (encrypted files)
+
+If the project is successful, the open source project will hopefully become a safe service for users of FDB.
 
 ## 2. Users/Personas Of The Project:
 
