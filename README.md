@@ -1,6 +1,15 @@
 # Encrypted Search Over FoundationDB
 
 ** **
+## Team:
+- Dasha Smolina (dsmolina@bu.edu)
+- Jin San Yoon
+- Stephen Sweet
+- Tian Tan
+- Thomas Shen
+
+## Mentor:
+- Dan Lambright (dlambrig@gmail.com)
 
 ## Project Description Template
 
