@@ -5,7 +5,7 @@
 - Dasha Smolina (dsmolina@bu.edu)
 - Jin San Yoon
 - Stephen Sweet
-- Tian Tan
+- Tian Tan (tiant@bu.edu)
 - Thomas Shen
 
 ## Mentor:
