@@ -1,4 +1,4 @@
-# encrypted-search-over-foundationDB
+# Encrypted Search Over FoundationDB
 
 ** **
 
