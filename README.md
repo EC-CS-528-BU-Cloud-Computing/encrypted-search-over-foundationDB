@@ -29,7 +29,7 @@ Project Proposal can be used during the follow-up analysis and design meetings t
 
 ## 1. Vision and Goals Of The Project:
 
-FoundationDB (FDB) is a distributed key-store with strong ACID guarantees (Atomicity, Consistency, Isolation, Distributed). It is widely used to store users' documents in the cloud. The users want to store and query their documents encrypted since they do not trust the server. Avoid leakage in documents and query result is the purpose of the project.
+FoundationDB (FDB) is a distributed key-store with strong ACID guarantees (Atomicity, Consistency, Isolation, Distributed). It is widely used to store users' documents in the cloud. The users want to store and query their documents in encrypted form since they do not trust the server. Preventing leakage of documents and query results is the purpose of the project.
 
 The core vision of this project is to develop a search algorithm that can search documents on the cloud (in FDB) without leakage.
 
@@ -38,7 +38,7 @@ The project is divided into the following steps:
     * Load files (the dataset to search) into FDB - done once.
     * Load index into FDB - done once.
     * Update index with new files - done frequently
-* Learn and apply the researcher's search algorithm to our project, which can
+* Learn and apply the two encrypted search algorithm to our project, which can
     * Query for token (in encrypted), return files - done frequently
 
 The idea system can:
