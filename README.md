@@ -70,29 +70,29 @@ The project scope includes testing the two encryption search algorithms on our l
 ** **
 
 ## 4. Solution Concept
-Encripted search is becoming more nessary for its security in this day and age.<br />
+Encripted search is becoming more necessary for security in this day and age.<br />
 FDB works as follows: <br />
-Client loads the data into the FDB database which is then encripted and is readly avalible for parsing. <br />
+Client loads the data into the FDB database which is then encrypted and is readily available for parsing. <br />
 <pre>  
 1.    user loads a file (ex. apple)   ______________________________________
       Client -------------------->  |      Foundation Data Base (FDB)      |
                                     |                                      |
                                     |                                      |
                                     |______________________________________|
-2.    The file gets encripted and FDB becomes indexable
+2.    The file gets encrypted and FDB becomes indexable
                                      ______________________________________
       Client -------------------->  |      Foundation Data Base (FDB)      |
                                     |           a  p                       |
                                     |            p l         l e           |
                                     |______________________________________|      
-3. The file become stored in the FDB
+3. The file is stored in the FDB
 </pre>
  Our job is to: 
  1) Load Files into FDB
  2) Update Files (delete, upload)
  3) Search Files
  
- We then have to evaluate the algorith for its:
+ We then have to evaluate the algorithm for its:
  * Speed
  * Space
  * Security (leakage)
