@@ -70,14 +70,23 @@ The project scope includes testing the two encryption search algorithms on our l
 ** **
 
 ## 4. Solution Concept
-
-This section provides a high-level outline of the solution.
-
-Global Architectural Structure Of the Project:
-
-This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
-
+Client loads the data into the FDB database which is then encripted and is readly avalible for parsing.
+                  ___________________
+        (load)   {                    }
+client --------> {                    }
+                 {       FDB          } 
+                 {                    }
+                 {                    }
+                 ----------------------
+ Our job is to: 
+ 1) Load Files into FDB
+ 2) Update Files (delete, upload)
+ 3) Search Files
  
+ We then have to evaluate the algorith for its:
+ -Speed
+ -Space
+ -Security (leakage)
 
 Design Implications and Discussion:
 
@@ -94,7 +103,10 @@ By the end of the project, we as a team expect to test the encrypted search algo
 
 ## 6.  Release Planning:
 
-Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
+Load files (the dataset to search) into FDB 
+Load index into FDB 
+Update index with new files
+Query for token, return files 
 
 ** **
 
