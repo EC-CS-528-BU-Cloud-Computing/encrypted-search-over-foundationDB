@@ -97,9 +97,7 @@ Client loads the data into the FDB database which is then encripted and is readl
  * Space
  * Security (leakage)
 
-Design Implications and Discussion:
 
-This section discusses the implications and reasons of the design decisions made during the global architecture design.
 
 ## 5. Acceptance criteria
 
