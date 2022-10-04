@@ -71,13 +71,9 @@ The project scope includes testing the two encryption search algorithms on our l
 
 ## 4. Solution Concept
 Client loads the data into the FDB database which is then encripted and is readly avalible for parsing. <br />
-<br >                  ___________________ 
-<br >        (load)   |                    | <br >
-<br > client --------> |                    | <br >
--                 |       FDB          | <br >
--                 |                    | <br >
--                 |                    | <br >
--                 ---------------------- <br >
+<br /) (load)
+Client ---->. {FDB}
+
  Our job is to: 
  1) Load Files into FDB
  2) Update Files (delete, upload)
