@@ -91,9 +91,9 @@ Client loads the data into the FDB database which is then encripted and is readl
  3) Search Files
  
  We then have to evaluate the algorith for its:
- -Speed
- -Space
- -Security (leakage)
+ * Speed
+ * Space
+ * Security (leakage)
 
 Design Implications and Discussion:
 
