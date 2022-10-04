@@ -70,6 +70,8 @@ The project scope includes testing the two encryption search algorithms on our l
 ** **
 
 ## 4. Solution Concept
+Encripted search is becoming more nessary for its security in this day and age.<br />
+FDB works as follows: <br />
 Client loads the data into the FDB database which is then encripted and is readly avalible for parsing. <br />
 <pre>  
 1.    user loads a file (ex. apple)   ______________________________________
@@ -77,7 +79,7 @@ Client loads the data into the FDB database which is then encripted and is readl
                                     |                                      |
                                     |                                      |
                                     |______________________________________|
-2.    The file gets encripted 
+2.    The file gets encripted and FDB becomes indexable
                                      ______________________________________
       Client -------------------->  |      Foundation Data Base (FDB)      |
                                     |           a  p                       |
