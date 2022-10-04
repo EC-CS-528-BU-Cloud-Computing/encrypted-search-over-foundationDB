@@ -71,8 +71,19 @@ The project scope includes testing the two encryption search algorithms on our l
 
 ## 4. Solution Concept
 Client loads the data into the FDB database which is then encripted and is readly avalible for parsing. <br />
-<pre> (load)
-Client ---->. {FDB}
+<pre>  
+1.    user loads a file (ex. apple)   ______________________________________
+      Client -------------------->  |      Foundation Data Base (FDB)      |
+                                    |                                      |
+                                    |                                      |
+                                    |______________________________________|
+2.    The file gets encripted 
+                                     ______________________________________
+      Client -------------------->  |      Foundation Data Base (FDB)      |
+                                    |           a  p                       |
+                                    |            p l         l e           |
+                                    |______________________________________|      
+3. The file become stored in the FDB
 </pre>
  Our job is to: 
  1) Load Files into FDB
