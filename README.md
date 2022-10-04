@@ -110,10 +110,10 @@ By the end of the project, we as a team expect to test the encrypted search algo
 
 ## 6.  Release Planning:
 
-Load files (the dataset to search) into FDB 
-Load index into FDB 
-Update index with new files
-Query for token, return files 
+1) Load files (the dataset to search) into FDB 
+2) Load index into FDB 
+3) Update index with new files
+4) Query for token, return files 
 
 ** **
 
