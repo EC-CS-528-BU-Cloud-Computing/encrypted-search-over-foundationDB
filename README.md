@@ -85,7 +85,12 @@ This section discusses the implications and reasons of the design decisions made
 
 ## 5. Acceptance criteria
 
-This section discusses the minimum acceptance criteria at the end of the project and stretch goals.
+By the end of the project, we as a team expect to test the encrypted search algorithms on MOC and deliver the following results:
+*Compare speed of queries in regards to:
+   *Size of dataset
+   *Clusion vs Dory
+   *Number of Parallel FBD Queries
+   *Take size of cluster and query complexity into account
 
 ## 6.  Release Planning:
 
