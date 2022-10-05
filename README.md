@@ -35,14 +35,9 @@ If the project is successful, the open source project will hopefully become a sa
 
 ## 2. Users/Personas Of The Project:
 
-> This section describes the principal user roles of the project together with the key characteristics of these roles. This information will inform the design and the user scenarios. A complete set of roles helps in ensuring that high-level requirements can be identified in the product backlog.
-
-> Again, the description should be specific enough that you can determine whether user A, performing action B, is a member of the set of users the project is designed for.
-
 Users of our project are people who want to store their data/files in the cloud (FDB to be exact) without being leaked during server-side searches. Our users need a search scheme that is efficient while protecting search access patterns.
 
 Specifically, when a user perform a search for a keyword over the files within a folder, the server learns only that a search happens in that folder, but does not learn which documents match the search, the number of documents that match, or other information about the keyword. 
-
 
 ** **
 
@@ -51,7 +46,6 @@ Specifically, when a user perform a search for a keyword over the files within a
 The project will have a Java interface to FDB. The project will implement the Clusion encrypted search algorithm with Java and FDB.The project will have a Go interface to FDB. The project will implement the Dory encrypted search algorithm with Go and FDB. 
 
 The project scope includes testing the two encryption search algorithms on our local machines. We will also test the algorithms on MOC. We will have an analysis comparing the two algorithms in terms of their space, speed, and security. We will compare them using varying dataset sizes, number of parallel FDB queries, storage schemes, cluster sizes, and query complexities. 
-
 
 ** **
 
@@ -82,8 +76,6 @@ Client loads the data into the FDB database which is then encrypted and is readi
  * Speed
  * Space
  * Security (leakage)
-
-
 
 ## 5. Acceptance criteria
 
