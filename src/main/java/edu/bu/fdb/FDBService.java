@@ -84,15 +84,15 @@ public class FDBService {
         String fileName = file.getName();
         int index = 0;
         try (Database db = fdb.open()){
-            String length = db.run(tr -> {
+            Long length = db.run(tr -> {
                 byte[] result = tr.get(Tuple.from(fileName + STR_LENGTH).pack()).join();
-                return Tuple.fromBytes(result).getString(0);
+                return Tuple.fromBytes(result).getLong(0);
             });
             db.run(transaction -> {
                 transaction.clear(Tuple.from(fileName + STR_LENGTH).pack());
                 return null;
             });
-            int len = Integer.parseInt(length);
+            int len = length.intValue();
             while (index <= len) {
                 String DBIndex = fileName + index;
                 db.run(transaction -> {
