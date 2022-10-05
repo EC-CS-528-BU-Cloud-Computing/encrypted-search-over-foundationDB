@@ -95,6 +95,13 @@ By the end of the project, we as a team expect to test the encrypted search algo
 
 ** **
 
+## 7. Implement
+
+* Java Implementation
+  * Environment: Windows, JDK8, FDB-Java-API 5.2.5
+
+** **
+
 ## General comments
 
 Remember that you can always add features at the end of the semester, but you can't go back in time and gain back time you spent on features that you couldn't complete.
