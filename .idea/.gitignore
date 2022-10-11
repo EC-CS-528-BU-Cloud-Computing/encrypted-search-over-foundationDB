@@ -7,7 +7,7 @@
 /dataSources/
 /dataSources.local.xml
 
-.idea/libraries/Clusion_1_0_SNAPSHOT_jar_with_dependencies.xml
-lib/
-src/test/files/
-src/test/downloads/
+**/libraries/Clusion_1_0_SNAPSHOT_jar_with_dependencies.xml
+**/lib/**
+**/test/files/**
+**/test/downloads/**
