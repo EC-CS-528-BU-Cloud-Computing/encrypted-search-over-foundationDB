@@ -17,7 +17,7 @@ public class FDBService {
     private static final Logger logger = LoggerFactory.getLogger(FDBService.class);
     private static final int FILE_MAX_SIZE = 10*1024;
     private static final String STR_LENGTH = "LENGTH";
-    private static final String DOWNLOAD_PATH = "E:\\IntelliJProject\\FDBDownload\\";
+    private static final String DOWNLOAD_PATH = ".\\src\\test\\downloads\\";
 
     private static List<File> listFiles(File dirPath){
         List<File> Path = Arrays.asList(dirPath.listFiles());
@@ -131,10 +131,10 @@ public class FDBService {
                 transaction.set(Tuple.from(DBLengthIndex).pack(), Tuple.from(final_index).pack());
                 return null;
             });
-            logger.info("UploadFile: Success upload " + fileName);
+            logger.info("UploadAFile: Success upload " + fileName);
             return true;
         } catch (Exception e) {
-            logger.error("UploadFile: Facing error when upload " + fileName);
+            logger.error("UploadAFile: Facing error when upload " + fileName);
             logger.error(e.getMessage());
             return false;
         }
