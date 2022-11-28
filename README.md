@@ -68,7 +68,7 @@ Client loads the data into the FDB database which is then encrypted and is readi
 3. The file is stored in the FDB
 </pre>
  Our job is to: 
- 1) Load Files into FDB
+ 1) Load Files into FDB.
  2) Update Files (delete, upload)
  3) Search Files
  
