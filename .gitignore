@@ -9,5 +9,10 @@
 
 .idea/libraries/Clusion_1_0_SNAPSHOT_jar_with_dependencies.xml
 lib/**
+src/test/additionalFiles/**
 src/test/files/**
 src/test/downloads/**
+target/**
+salt/**
+src/tmp/**
+out/**

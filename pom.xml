@@ -13,6 +13,70 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.12.RELEASE</version>
+                <configuration>
+                    <mainClass>edu.bu.Startup</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.lakala.sh.mms.sm4.DecMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <includeScope>runtime</includeScope>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>de.ntcomputer</groupId>
+                <artifactId>executable-packer-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <configuration>
+                    <mainClass>edu.bu.Startup</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>pack-executable-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.foundationdb</groupId>
@@ -33,6 +97,26 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.11.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.11.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.54</version>
+        </dependency>
+        <dependency>
+            <groupId>org.crypto.sse</groupId>
+            <artifactId>Clusion</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
