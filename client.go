@@ -510,23 +510,8 @@ func main() {
     latencyBench := flag.Bool("latency_bench", false, "run latency benchmarks")
     flag.Parse()
 
-    if (*runTests) {
-        log.Println("going to run correctness tests")
-        correctnessTests(*filename, *bloomFilterSz, *numDocs, *isMalicious, *useMaster, *benchmarkDir)
-    } else if (*onlySetup) {
-        runFastSetup(*filename, *numDocs, *bloomFilterSz, *useMaster, *numClusters)
-    }else if (*runThroughput && *numClusters == 0) {
-        runThroughputBenchmark(*filename, *numDocs, *bloomFilterSz, *isMalicious, *useMaster, *throughputSec, *throughputThreads, *numUpdates, *numSearches)
-    } else if (*runThroughput && *numClusters > 0) {
-        runThroughputClustersBenchmark(*filename, *numDocs, *bloomFilterSz, *useMaster, *throughputSec, *throughputThreads, *numUpdates, *numSearches, *numClusters)
+        log.Printf("interactive search")
 
-    } else if (*numClusters > 0) {
-        runParallelBenchmark(*filename, *numDocs, *bloomFilterSz, *useMaster, *numClusters)
-    }else if (*updateBench) {
-        runDirBenchmark(*filename, *benchmarkDir, *bloomFilterSz, *numDocs, *isMalicious, *useMaster)
-    } else if (*latencyBench) {
-        runArtificialBenchmark(*filename, *numDocs, *bloomFilterSz, *isMalicious, *fastSetup, *useMaster, *latencyPrints)
-    }
         runInteractiveSearches(*filename, *numDocs, *bloomFilterSz, *isMalicious, *useMaster, *benchmarkDir)
     
 }
