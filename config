@@ -1,0 +1,34 @@
+Host nerc_proxy
+	HostName 199.94.60.76
+	User ubuntu
+	IdentityFile ~/.ssh/id_rsa
+
+Host team4-5
+	HostName 192.168.0.227
+	User centos
+	IdentityFile ~/.ssh/id_rsa
+	ProxyJump nerc_proxy
+
+Host team4-4
+	HostName 192.168.0.97
+	User centos
+	IdentityFile ~/.ssh/id_rsa
+	ProxyJump nerc_proxy
+
+Host team4-3
+	HostName 192.168.0.123
+	User centos
+	IdentityFile ~/.ssh/id_rsa
+	ProxyJump nerc_proxy
+
+Host team4-2
+	HostName 192.168.0.171
+	User centos
+	IdentityFile ~/.ssh/id_rsa
+	ProxyJump nerc_proxy
+
+Host team4-1
+	HostName 192.168.0.53
+	User centos
+	IdentityFile ~/.ssh/id_rsa
+	ProxyJump nerc_proxy
