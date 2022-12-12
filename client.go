@@ -109,11 +109,7 @@ func runParallelBenchmark(configFile string, numDocs int, bloomFilterSz int, use
         log.Println(err)
     }
 
-    log.Printf("time to search: %f ms\n", timeMs);
 
-    /* Clean up */
-    log.Println("Cleaning up...")
-    log.Printf("0 0 0 0 %f\n", timeMs)
     client.CloseConnection(conn)
     client.Cleanup()
 }
@@ -491,13 +487,42 @@ func runThroughputBenchmark(configFile string, numDocs int, bloomFilterSz int, i
 func main() {
     /* Set up config */
     filename := flag.String("config", "src/config/client.config", "client config file")
+    runTests := flag.Bool("test", false, "should run correctness tests")
     numDocs := flag.Int("num_docs", 0, "number of docs for artificial benchmark")
     benchmarkDir := flag.String("bench_dir", "", "directory containing files to benchmark")
+    updateBench := flag.Bool("update_bench", false, "run update bnehcmarks")
     bloomFilterSz := flag.Int("bf_sz", 128, "bloom filter size in bits")
     isMalicious := flag.Bool("malicious", true, "run with malicious checks")
+    fastSetup := flag.Bool("fast_setup", true, "run fast setup (ONLY TESTING)")
     useMaster := flag.Bool("use_master", true, "use a master for batched updates")
+    runThroughput := flag.Bool("throughput", false, "run thorughput benchmarks")
+    throughputSec := flag.Int("throughput_sec", 60, "throughput seconds")
+    throughputThreads := flag.Int("throughput_threads", 64, "throughput threads")
+    numUpdates := flag.Int("num_updates", 5, "number of updates before searches")
+    numSearches := flag.Int("num_searches", 5, "number of searches before updates")
+    numClusters := flag.Int("num_clusters", 0, "number of searches before updates")
+    onlySetup := flag.Bool("only_setup", false, "only setup")
+    latencyPrints := flag.Bool("latency_prints", false, "print out extra latency information")
+    latencyBench := flag.Bool("latency_bench", false, "run latency benchmarks")
     flag.Parse()
-   
+
+    if (*runTests) {
+        log.Println("going to run correctness tests")
+        correctnessTests(*filename, *bloomFilterSz, *numDocs, *isMalicious, *useMaster, *benchmarkDir)
+    } else if (*onlySetup) {
+        runFastSetup(*filename, *numDocs, *bloomFilterSz, *useMaster, *numClusters)
+    }else if (*runThroughput && *numClusters == 0) {
+        runThroughputBenchmark(*filename, *numDocs, *bloomFilterSz, *isMalicious, *useMaster, *throughputSec, *throughputThreads, *numUpdates, *numSearches)
+    } else if (*runThroughput && *numClusters > 0) {
+        runThroughputClustersBenchmark(*filename, *numDocs, *bloomFilterSz, *useMaster, *throughputSec, *throughputThreads, *numUpdates, *numSearches, *numClusters)
+
+    } else if (*numClusters > 0) {
+        runParallelBenchmark(*filename, *numDocs, *bloomFilterSz, *useMaster, *numClusters)
+    }else if (*updateBench) {
+        runDirBenchmark(*filename, *benchmarkDir, *bloomFilterSz, *numDocs, *isMalicious, *useMaster)
+    } else if (*latencyBench) {
+        runArtificialBenchmark(*filename, *numDocs, *bloomFilterSz, *isMalicious, *fastSetup, *useMaster, *latencyPrints)
+  
         runInteractiveSearches(*filename, *numDocs, *bloomFilterSz, *isMalicious, *useMaster, *benchmarkDir)
-        
+    
 }
