@@ -13,10 +13,10 @@ public class TestClusionDlsD {
 
         ClusionDlsD dlsd1 = new ClusionDlsD();
 
-        dlsd1.generateDlsD(".\\src\\test\\files");
-        long filesSize = dlsd1.computeFilesSize(new File(".\\src\\test\\files"));
-//        dlsd1.generateDlsD("E:\\IntelliJProject\\FDBDS_maildir");
-//        long filesSize = dlsd1.computeFilesSize(new File("E:\\IntelliJProject\\FDBDS_maildir"));
+//        dlsd1.generateDlsD(".\\src\\test\\files");
+//        long filesSize = dlsd1.computeFilesSize(new File(".\\src\\test\\files"));
+        dlsd1.generateDlsD("E:\\IntelliJProject\\FDBDS_maildir");
+        long filesSize = dlsd1.computeFilesSize(new File("E:\\IntelliJProject\\FDBDS_maildir"));
 
         Analysis.addFilesSize(filesSize);
         dlsd1.uploadDlsD();
